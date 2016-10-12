@@ -5,6 +5,7 @@ defmodule Ztm.Mixfile do
     [app: :ztm,
      version: "0.1.0",
      elixir: "~> 1.3",
+     escript: [main_module: Ztm],
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -15,7 +16,6 @@ defmodule Ztm.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     [
-      mod: {Ztm, []},
       applications: [:logger, :httpoison]
     ]
   end

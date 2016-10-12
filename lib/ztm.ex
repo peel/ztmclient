@@ -1,10 +1,10 @@
 defmodule Ztm do
-  use Application
 
-  def start(_type, _args) do
+  def main(_args) do
     Ztm.Supervisor.start_link
+    IO.gets ""
   end
-
+  
   def url do
     Application.get_env(:ztm, :url) || System.get_env(:ztm_url)
   end
