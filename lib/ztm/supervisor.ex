@@ -6,7 +6,9 @@ defmodule Ztm.Supervisor do
   end
 
   def init([]) do
-    children = []
+    children = [
+      worker(Ztm.Ticker, [])
+    ]
     supervise(children, strategy: :one_for_one)
   end
   
