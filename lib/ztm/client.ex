@@ -10,7 +10,7 @@ defmodule Ztm.Client do
     |> Floki.find("tr td")
     |> Stream.map(fn(td) -> {"td", [], [val]} = td; Floki.text(val) end)
     |> Enum.chunk(3)
-  end 
+  end
 
   defp ascii(str) do
     Codepagex.to_string!(str, :iso_8859_2, Codepagex.use_utf_replacement)
